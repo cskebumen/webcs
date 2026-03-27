@@ -44,3 +44,31 @@
                 <span class="font-bold">ISBDS CIPTA SEJATI Cabang Kebumen</span>
             </div>
         </div>
+
+<script>
+        function generateBarcode(anggota) {
+    const nia = anggota.nia;
+    const nama = anggota.nama_lengkap;
+    const ttl = `${anggota.tempat_lahir || ''}, ${anggota.tanggal_lahir || ''}`;
+    const sabukTerakhir = anggota.sabuk_terakhir || 'Polos';
+    const dataStr = `${nia}-${nama}-${ttl}-ISBDSCSKBM-${sabukTerakhir}`;
+    JsBarcode("#barcode-canvas", dataStr, {
+        format: "CODE128",
+        lineColor: "#000",
+        width: 2,
+        height: 50,
+        displayValue: true
+    });
+                        }
+
+        document.getElementById('isi-data-profil').innerHTML = `
+            <div class="row-data"><div class="label-data">1. Nama Anggota</div><div class="value-data">: ${anggota.nama_lengkap || '-'}</div></div>
+            <div class="row-data"><div class="label-data">2. Nomor Induk Anggota (NIA)</div><div class="value-data" id="view-nia">: ${anggota.nia || '-'}</div></div>
+            <div class="row-data"><div class="label-data">3. Tempat, Tanggal Lahir</div><div class="value-data">: ${anggota.tempat_lahir || '-'}, ${anggota.tanggal_lahir || '-'}</div></div>
+            <div class="row-data"><div class="label-data">4. Jenis Kelamin</div><div class="value-data">: ${anggota.jenis_kelamin || '-'}</div></div>
+            <div class="row-data"><div class="label-data">5. Alamat</div><div class="value-data">: ${anggota.alamat_lengkap || '-'}</div></div>
+            <div class="row-data"><div class="label-data">6. Ranting</div><div class="value-data">: ${anggota.ranting || '-'}</div></div>
+            <div class="row-data"><div class="label-data">7. Cabang</div><div class="value-data">: KEBUMEN</div></div>
+            <div class="row-data"><div class="label-data">8. No. HP / WA</div><div class="value-data">: ${anggota.no_hp || '-'}</div></div>
+        `;
+</script>
