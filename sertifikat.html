@@ -415,4 +415,29 @@
 </div>
 </div>
 </main>
+<script>
+        const LOGIKA_JABATAN = {
+    "Kuning": "Pemula",
+    "Hijau": "Dasar 1",
+    "Biru": "Dasar 2",
+    "Cokelat": "Asisten Pelatih",
+    "Hitam 1": "Pelatih Muda",
+    "Hitam 2": "Pelatih Madya",
+    "Hitam 3": "Pelatih Utama",
+    "Hitam 4": "Asisten Guru Muda",
+    "Merah 1": "Guru Muda",
+    "Merah 2": "Guru Madya",
+    "Merah 3": "Guru Utama",
+    "Merah 4": "Guru Besar"
+};
+
+function generateQRCode(data) {
+    const container = document.getElementById('qrcode-container');
+    container.innerHTML = '';
+    new QRCode(container, {
+        text: data,
+        width: 90,
+        height: 90
+    });
+</script>
 </body></html>
