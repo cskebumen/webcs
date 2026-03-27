@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - ISBDS Cipta Sejati Cabang Kebumen</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#959efd",
+              "tertiary": "#004568",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary-fixed": "#001e30",
+              "inverse-surface": "#2e3132",
+              "error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#8dcdff",
+              "on-primary": "#ffffff",
+              "on-background": "#191c1d",
+              "surface-dim": "#d9dadb",
+              "surface": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "surface-container-high": "#e7e8e9",
+              "primary-fixed": "#d7e2ff",
+              "surface-tint": "#115cb9",
+              "on-primary-fixed": "#001a40",
+              "secondary": "#4c56af",
+              "primary": "#003f87",
+              "on-primary-container": "#bbd0ff",
+              "surface-bright": "#f8f9fa",
+              "outline": "#727784",
+              "surface-container-highest": "#e1e3e4",
+              "secondary-fixed": "#e0e0ff",
+              "on-secondary": "#ffffff",
+              "primary-container": "#0056b3",
+              "on-secondary-container": "#27308a",
+              "inverse-primary": "#acc7ff",
+              "on-secondary-fixed-variant": "#343d96",
+              "surface-container": "#edeeef",
+              "on-secondary-fixed": "#000767",
+              "secondary-fixed-dim": "#bdc2ff",
+              "background": "#f8f9fa",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "on-surface-variant": "#424752",
+              "surface-variant": "#e1e3e4",
+              "tertiary-fixed": "#cae6ff",
+              "on-error": "#ffffff",
+              "primary-fixed-dim": "#acc7ff",
+              "tertiary-container": "#005e8b",
+              "outline-variant": "#c2c6d4",
+              "on-tertiary-container": "#a2d5ff",
+              "on-error-container": "#93000a",
+              "on-tertiary-fixed-variant": "#004b70",
+              "on-tertiary": "#ffffff",
+              "on-primary-fixed-variant": "#004491",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 hidden md:flex flex-col bg-slate-50 dark:bg-slate-900 tonal-shift bg-slate-100/50 dark:bg-slate-800/50 shadow-xl shadow-blue-900/5 dark:shadow-none z-40 py-8 gap-1">
+<div class="px-8 mb-8">
+<h1 class="text-lg font-bold text-blue-900 dark:text-blue-50">ISBDS Cipta Sejati</h1>
+</div>
+<div class="flex flex-col flex-1 gap-1 px-2"><!-- Active Tab: Dashboard -->
+<a class="bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-200 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">Dashboard</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">Data Induk</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">Profil Anggota</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">E-sertifikat</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="card_membership">card_membership</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">E-KTA</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">E-Surat</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="grading">grading</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">E-raport</span>
+</a></div>
+<div class="mt-auto px-6 pt-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Budi Santoso" class="w-10 h-10 rounded-full object-cover" data-alt="close-up portrait of a professional Indonesian man in a clean white shirt with a friendly expression and sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuh6mE91LMtiZ7V9spQcgT3AuHHnOET0ACG71C2G_Yzd9ARrhnWaklqxxWC3oOe5sb6W8hkqPpgdUR3rOqkiwycZus2KlCzVDD2gciZFPLTBD_4jwVfx7vq3i3djEg33T5NyHzR3RCD_M_YFsyUi0VS-e0E2MJdaVTGQF2EtqvgEbywL-tt3cob8ewgyVspmw7TyOwsv8pHZxbSO6NX3sLHUNFQheQQRbFmaYl8tk13aKUiokACt6v5C-SLJ5B-M_9BfV1Yryoje96"/>
+<div class="overflow-hidden">
+<p class="font-manrope font-bold text-sm text-blue-900 truncate">Budi Santoso</p>
+<p class="text-xs text-slate-500 truncate">Admin Cabang</p>
+</div>
+</div>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg px-4 py-3 flex items-center gap-3 transition-all duration-200 ease-in-out active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-manrope font-semibold text-sm tracking-tight">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen bg-surface">
+<!-- TopAppBar (Authority: JSON) -->
+<header class="fixed top-0 w-full md:w-[calc(100%-16rem)] z-50 bg-transparent text-blue-900 dark:text-blue-100 font-manrope font-bold tracking-tight no-border space-between flat no shadows flex justify-between items-center px-8 py-6 backdrop-blur-md bg-white/30">
+<div class="flex items-center gap-4">
+<span class="md:hidden material-symbols-outlined cursor-pointer">menu</span>
+<h2 class="text-xl font-extrabold text-blue-900 dark:text-blue-50 tracking-tighter">Cabang Kebumen</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6 text-sm">
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-800 transition-colors" data-icon="help_outline">help_outline</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-blue-800 transition-colors" data-icon="info">info</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs">BS</div>
+</div>
+</header>
+<!-- Content Body -->
+<div class="pt-24 px-8 pb-12 flex-1">
+<!-- Hero Heading -->
+<div class="mb-10">
+<p class="text-tertiary font-medium mb-1">Selamat datang kembali,</p>
+<h1 class="text-3xl font-extrabold text-primary tracking-tight">Dashboard Overview</h1>
+</div>
+<!-- Bento Grid Section 1: Member Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Total Anggota -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-blue-900/5 shadow-2xl flex flex-col gap-4 border-l-4 border-primary">
+<div class="flex justify-between items-start">
+<div class="bg-primary/10 p-3 rounded-lg text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="group">group</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">+12%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Total Anggota</p>
+<h3 class="text-2xl font-extrabold text-on-surface">1,248</h3>
+</div>
+</div>
+<!-- Anggota Aktif -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-blue-900/5 shadow-2xl flex flex-col gap-4 border-l-4 border-green-500">
+<div class="flex justify-between items-start">
+<div class="bg-green-100 p-3 rounded-lg text-green-700">
+<span class="material-symbols-outlined text-3xl" data-icon="how_to_reg">how_to_reg</span>
+</div>
+<span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Stabil</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Anggota Aktif</p>
+<h3 class="text-2xl font-extrabold text-on-surface">1,012</h3>
+</div>
+</div>
+<!-- Anggota Istirahat -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-blue-900/5 shadow-2xl flex flex-col gap-4 border-l-4 border-amber-400">
+<div class="flex justify-between items-start">
+<div class="bg-amber-100 p-3 rounded-lg text-amber-700">
+<span class="material-symbols-outlined text-3xl" data-icon="bedtime">bedtime</span>
+</div>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded">-2%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Anggota Istirahat</p>
+<h3 class="text-2xl font-extrabold text-on-surface">184</h3>
+</div>
+</div>
+<!-- Anggota Keluar -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-blue-900/5 shadow-2xl flex flex-col gap-4 border-l-4 border-error">
+<div class="flex justify-between items-start">
+<div class="bg-error-container/20 p-3 rounded-lg text-error">
+<span class="material-symbols-outlined text-3xl" data-icon="person_remove">person_remove</span>
+</div>
+<span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded">+1%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Anggota Keluar</p>
+<h3 class="text-2xl font-extrabold text-on-surface">52</h3>
+</div>
+</div>
+</div>
+<!-- Main Layout: 2 Column Asymmetry -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left: Branch Distribution & Correspondence -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Branch Distribution -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-bold text-primary">Distribusi Per Ranting</h2>
+<button class="text-sm font-semibold text-tertiary flex items-center gap-1 hover:underline">
+                                Lihat Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Ranting Item -->
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center justify-between group hover:bg-primary transition-all duration-300">
+<div>
+<p class="text-sm font-bold group-hover:text-white">Kebumen Kota</p>
+<p class="text-xs text-on-surface-variant group-hover:text-blue-100">450 Anggota</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary group-hover:bg-white group-hover:border-white">
+                                    36%
+                                </div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center justify-between group hover:bg-primary transition-all duration-300">
+<div>
+<p class="text-sm font-bold group-hover:text-white">Pejagoan</p>
+<p class="text-xs text-on-surface-variant group-hover:text-blue-100">312 Anggota</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary group-hover:bg-white group-hover:border-white">
+                                    25%
+                                </div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center justify-between group hover:bg-primary transition-all duration-300">
+<div>
+<p class="text-sm font-bold group-hover:text-white">Sruweng</p>
+<p class="text-xs text-on-surface-variant group-hover:text-blue-100">286 Anggota</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary group-hover:bg-white group-hover:border-white">
+                                    23%
+                                </div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-lg flex items-center justify-between group hover:bg-primary transition-all duration-300">
+<div>
+<p class="text-sm font-bold group-hover:text-white">Kutowinangun</p>
+<p class="text-xs text-on-surface-variant group-hover:text-blue-100">200 Anggota</p>
+</div>
+<div class="w-12 h-12 rounded-full border-4 border-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary group-hover:bg-white group-hover:border-white">
+                                    16%
+                                </div>
+</div>
+</div>
+</section>
+<!-- Correspondence Stats -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/20">
+<h2 class="text-xl font-bold text-primary mb-6">Manajemen Surat</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface-variant">Total Surat</span>
+<span class="text-lg font-bold text-primary">342</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-full"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface-variant">Surat Masuk</span>
+<span class="text-lg font-bold text-green-600">128</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full" style="width: 37%"></div>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface-variant">Surat Keluar</span>
+<span class="text-lg font-bold text-blue-400">214</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-blue-400 h-full" style="width: 63%"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right: Activity Log -->
+<div class="lg:col-span-1">
+<section class="bg-surface-container-highest/50 backdrop-blur-sm p-8 rounded-xl h-full border border-outline-variant/10">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+<h2 class="text-xl font-bold text-primary">Log Aktivitas</h2>
+</div>
+<div class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant/30">
+<!-- Log Item -->
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-white ring-4 ring-surface">
+<span class="material-symbols-outlined text-[12px]" data-icon="person_add">person_add</span>
+</div>
+<p class="text-sm font-semibold text-on-surface leading-snug">Budi Santoso updated member data</p>
+<p class="text-xs text-on-surface-variant mt-1">10 Menit yang lalu</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-tertiary flex items-center justify-center text-white ring-4 ring-surface">
+<span class="material-symbols-outlined text-[12px]" data-icon="upload_file">upload_file</span>
+</div>
+<p class="text-sm font-semibold text-on-surface leading-snug">New letter uploaded: SK-042/III/2024</p>
+<p class="text-xs text-on-surface-variant mt-1">2 Jam yang lalu</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-on-surface-variant flex items-center justify-center text-white ring-4 ring-surface">
+<span class="material-symbols-outlined text-[12px]" data-icon="edit_note">edit_note</span>
+</div>
+<p class="text-sm font-semibold text-on-surface leading-snug">Ahmad Susilo changed status to 'Istirahat'</p>
+<p class="text-xs text-on-surface-variant mt-1">Kemarin, 14:20</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-white ring-4 ring-surface">
+<span class="material-symbols-outlined text-[12px]" data-icon="domain">domain</span>
+</div>
+<p class="text-sm font-semibold text-on-surface leading-snug">Ranting Pejagoan added 5 new members</p>
+<p class="text-xs text-on-surface-variant mt-1">2 Hari yang lalu</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary-container flex items-center justify-center text-white ring-4 ring-surface">
+<span class="material-symbols-outlined text-[12px]" data-icon="security">security</span>
+</div>
+<p class="text-sm font-semibold text-on-surface leading-snug">Admin profile security update</p>
+<p class="text-xs text-on-surface-variant mt-1">3 Hari yang lalu</p>
+</div>
+</div>
+<button class="w-full mt-10 py-3 bg-surface-container-highest rounded-xl text-xs font-bold text-primary hover:bg-primary hover:text-white transition-all duration-300">
+                            LIHAT SEMUA LOG
+                        </button>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer (Authority: JSON) -->
+<footer class="w-full py-4 border-t-0 bg-slate-50 dark:bg-slate-900 tonal-shift bg-slate-50 dark:bg-slate-900 flat no shadows flex flex-col md:flex-row justify-between items-center px-12 mt-auto">
+<div class="text-blue-800 dark:text-blue-400 font-inter text-xs tracking-wide">
+                © 2024 ISBDS Cipta Sejati Cabang Kebumen. All rights reserved.
+            </div>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="text-slate-500 dark:text-slate-400 font-inter text-xs tracking-wide hover:text-blue-600 dark:hover:text-blue-200 transition-all opacity-80 hover:opacity-100" href="#">Bantuan</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-xs tracking-wide hover:text-blue-600 dark:hover:text-blue-200 transition-all opacity-80 hover:opacity-100" href="#">Kebijakan Privasi</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-xs tracking-wide hover:text-blue-600 dark:hover:text-blue-200 transition-all opacity-80 hover:opacity-100" href="#">Kontak Support</a>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Only for main dash tasks) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>
