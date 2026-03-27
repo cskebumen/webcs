@@ -210,11 +210,18 @@
 <label class="block text-xs font-bold text-on-surface-variant mb-1.5 uppercase tracking-wider">Tingkat Sabuk</label>
 <div class="bg-surface-container-highest rounded-xl px-4 py-3 ghost-border">
 <select class="w-full bg-transparent border-none p-0 focus:ring-0 text-sm font-semibold appearance-none">
-<option>Sabuk Kuning</option>
-<option>Sabuk Hijau</option>
-<option>Sabuk Biru</option>
-<option>Sabuk Coklat</option>
-<option>Sabuk Hitam</option>
+<option value="Kuning">Kuning</option>
+                        <option value="Hijau">Hijau</option>
+                        <option value="Biru">Biru</option>
+                        <option value="Cokelat">Cokelat</option>
+                        <option value="Hitam 1">Hitam 1</option>
+                        <option value="Hitam 2">Hitam 2</option>
+                        <option value="Hitam 3">Hitam 3</option>
+                        <option value="Hitam 4">Hitam 4</option>
+                        <option value="Merah 1">Merah 1</option>
+                        <option value="Merah 2">Merah 2</option>
+                        <option value="Merah 3">Merah 3</option>
+                        <option value="Merah 4">Merah 4</option>
 </select>
 </div>
 </div>
@@ -279,55 +286,120 @@
 <div class="absolute inset-8 border-[12px] border-double border-primary/20 pointer-events-none"></div>
 <div class="absolute inset-10 border border-primary/40 pointer-events-none"></div>
 <!-- Certificate Content -->
-<div class="relative h-full flex flex-col items-center justify-center text-center px-24 py-16">
-<!-- Header -->
-<div class="flex items-center gap-6 mb-8">
-<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
-</div>
-<div class="text-left">
-<h5 class="font-headline font-extrabold text-xl text-primary leading-tight tracking-tighter">IKATAN SENI BELA DIRI SILAT</h5>
-<h5 class="font-headline font-extrabold text-2xl text-primary leading-tight tracking-tighter mt-[-4px]">CIPTA SEJATI</h5>
-<p class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mt-1">Cabang Kebumen - Jawa Tengah</p>
-</div>
-</div>
-<div class="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-10"></div>
-<!-- Title -->
-<h2 class="font-headline text-5xl font-black text-on-surface tracking-tighter mb-4">SERTIFIKAT</h2>
-<p class="text-xs font-mono font-bold text-primary/70 tracking-widest mb-10">NO: ISBDS-CS/0001/SERT-PPD/V/2026</p>
-<p class="font-body italic text-on-surface-variant text-sm mb-4">Diberikan kepada:</p>
-<h3 class="font-headline text-4xl font-extrabold text-primary tracking-tight mb-2 underline decoration-primary/20 underline-offset-8">MUHAMMAD RAFFI ARSYAD</h3>
-<p class="font-mono text-sm font-bold text-on-surface/80 tracking-widest mb-8">NIA: 2026.01.001</p>
-<p class="font-body text-on-surface-variant text-sm max-w-lg leading-relaxed mb-8">
-                                Dinyatakan telah LULUS dalam Ujian Kenaikan Tingkat (UKT) yang diselenggarakan pada tanggal 12 Mei 2026 dan berhak menyandang tingkatan:
-                            </p>
-<div class="px-8 py-3 bg-primary rounded-xl mb-12 transform rotate-[-1deg]">
-<span class="text-2xl font-headline font-black text-white tracking-widest uppercase italic">SABUK KUNING</span>
-</div>
-<!-- Signatures Footer -->
-<div class="w-full grid grid-cols-2 gap-16 text-center mt-4">
-<div>
-<div class="h-16 flex items-center justify-center">
-<div class="w-24 h-24 absolute opacity-10 pointer-events-none">
-<span class="material-symbols-outlined text-7xl text-primary" data-icon="verified_user">verified_user</span>
-</div>
-</div>
-<div class="border-t border-on-surface-variant pt-2">
-<p class="text-sm font-bold text-on-surface">DRS. BAMBANG SUDARNO</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-medium">Ketua Cabang</p>
-</div>
-</div>
-<div>
-<div class="h-16 flex items-center justify-center">
-<img alt="Official Seal" class="h-16 w-16 opacity-80 mix-blend-multiply" data-alt="Digital circular golden wax seal with an intricate emblem of a martial arts organization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkyzGO1LgCaMPTLS78ESPrzFiwFf8OWgD2jDlcSpBzYN86zzcp0ln9Pf-rnIYXU8RDPBeNnhW9FZvsvWA5SoyU-1B6xv4XGPuUhwTQm0jOwu_s1xQQqNNswk17u7ISKvJ78A3w-QBlD0woDFzhnfebrhgJoZhQUjvQphZTOXFHyygp47D0NRGP4Maw4-qloL4UZAGiqwZsZIZJGfWK9QzM9hxLJs1uV36Xld0HvTq_8J0ziM3ld5mxVlJT8y5dXgFTP7q4_uBReBUl"/>
-</div>
-<div class="border-t border-on-surface-variant pt-2">
-<p class="text-sm font-bold text-on-surface">12 MEI 2026</p>
-<p class="text-[10px] text-on-surface-variant uppercase font-medium">Tanggal Terbit</p>
-</div>
-</div>
-</div>
-</div>
+<!-- Tabel Riwayat Sertifikat (untuk semua role, tapi difilter) -->
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold"><i class="bi bi-clock-history me-2"></i>Riwayat Sertifikat</h5>
+        </div>
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>No. Sertifikat</th>
+                                <th>NIA</th>
+                                <th>Nama</th>
+                                <th>Sabuk</th>
+                                <th>Tanggal Kenaikan</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="riwayat-sertifikat-body">
+                            <tr><td colspan="6" class="text-center text-muted">Memuat data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview Sertifikat (akan tampil setelah generate preview) -->
+    <div class="preview-scroll-wrapper" id="preview-wrapper" style="display: none;">
+        <div id="print-area" class="sertifikat-paper-portrait shadow-lg bg-white">
+            <div class="border-outer">
+                <div class="border-inner">
+                    <!-- Kop -->
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="ipsi.png" class="logo-side" onerror="this.src='https://via.placeholder.com/70?text=IPSI'">
+                        <div class="text-center flex-grow-1">
+                            <h4 class="fw-bold mb-0" style="font-size: 14pt;">INSTITUT SENI BELA DIRI SILAT</h4>
+                            <h2 class="fw-bold mb-0" style="font-size: 24pt; color: #1a237e;">" CIPTA SEJATI "</h2>
+                            <div style="width: 60%; height: 2px; background: #000; margin: 8px auto;"></div>
+                        </div>
+                        <img src="isbds.png" class="logo-side" onerror="this.src='https://via.placeholder.com/70?text=ISBDS'">
+                    </div>
+
+                    <!-- Judul Sertifikat -->
+                    <div class="text-center mt-3">
+                        <h1 style="font-family: 'Times New Roman', serif; font-size: 34pt; font-style: italic; text-decoration: underline;" class="mb-1">Sertifikat</h1>
+                        <p class="fw-bold mb-4" style="font-size: 10pt;">Nomor : <span id="view-no">-</span></p>
+
+                        <p class="mb-2" style="font-size: 12pt;">Diberikan kepada :</p>
+                        <h2 class="fw-bold mb-3" id="view-nama" style="font-size: 26pt; border-bottom: 2px solid #eee; display: inline-block; padding: 0 30px; text-transform: uppercase; white-space: nowrap; max-width: 100%; overflow: hidden;">NAMA ANGGOTA</h2>
+
+                        <!-- Data diri -->
+                        <div style="width: 450px; margin: 10px auto; text-align: left; font-size: 10pt; line-height: 1.8;">
+                            <div class="d-flex">
+                                <div style="width: 180px;">Tempat, Tanggal Lahir</div>
+                                <div class="flex-grow-1">: <span id="view-ttl">-</span></div>
+                            </div>
+                            <div class="d-flex">
+                                <div style="width: 180px;">Nomor Induk Anggota</div>
+                                <div class="flex-grow-1">: <span id="view-nia">-</span></div>
+                            </div>
+                            <div class="d-flex">
+                                <div style="width: 180px;">Anggota Cabang</div>
+                                <div class="flex-grow-1">: KEBUMEN</div>
+                            </div>
+                        </div>
+
+                        <!-- Narasi -->
+                        <div style="max-width: 80%; margin: 30px auto; font-size: 10.5pt; line-height: 1.6;">
+                            <p>Telah menyelesaikan ujian dengan baik dan memenuhi persyaratan untuk lulus ke tingkat <b id="view-jabatan" class="text-primary">-</b> dalam ujian kenaikan tingkat yang diselenggarakan oleh Institut Seni Bela Diri Silat CIPTA SEJATI dan berhak menyandang sabuk <b id="view-sabuk" class="text-primary">-</b>.</p>
+                        </div>
+
+                        <p style="font-size: 11pt;">Diberikan pada tanggal <span id="view-tgl-indo">-</span></p>
+                    </div>
+
+                    <!-- Tanda Tangan -->
+                    <div class="d-flex justify-content-between align-items-end mt-auto px-4 pb-4">
+                        <div class="text-center" style="min-width: 160px;">
+                            <p class="mb-0" style="font-size: 9pt;">Ketua Cabang Kebumen,</p>
+                            <div style="height: 70px;" class="d-flex align-items-center justify-content-center my-2">
+                                <img src="ketua.png" style="max-height: 100%;" onerror="this.style.opacity='0'">
+                            </div>
+                            <p class="fw-bold text-decoration-underline mb-0" style="font-size: 9pt;">AHMAD TAUFIK</p>
+                            <p class="small mb-0" style="font-size: 8pt;">NIA. 03.06.02.000003</p>
+                        </div>
+                        <div class="text-center" style="min-width: 160px;">
+                            <p class="mb-0" style="font-size: 9pt;">Kebumen, <span id="view-tgl-ttd">-</span></p>
+                            <p class="mb-0" style="font-size: 9pt;">Guru Besar,</p>
+                            <div style="height: 70px;" class="d-flex align-items-center justify-content-center my-2">
+                                <img src="gurubesar.png" style="max-height: 100%;" onerror="this.style.opacity='0'">
+                            </div>
+                            <p class="fw-bold text-decoration-underline mb-0" style="font-size: 9pt;">GB. Ir. SANTOSO</p>
+                            <p class="small mb-0" style="font-size: 8pt;">NIA. 02.05.1966.001</p>
+                        </div>
+                    </div>
+
+                    <!-- Baris Foto, QR, Keterangan -->
+                    <div class="d-flex align-items-stretch justify-content-between mt-3" style="gap: 10px;">
+                        <div class="text-center" style="width: 2.5cm;">
+                            <div style="border: 1px solid #000; width: 2.2cm; height: 2.8cm; margin: 0 auto; overflow: hidden;">
+                                <img id="view-foto" src="/img/placeholder-3x4.png" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <p class="small mt-1" style="font-size: 7pt;">Foto 3x4</p>
+                        </div>
+                        <div style="width: 4cm; display: flex; flex-direction: column; justify-content: center;">
+                            <div id="qrcode-container" style="width: 100px; height: 100px; margin: 0 auto;"></div>
+                            <p class="mb-0" style="font-size: 7pt; line-height: 1.2;">Dokumen ini dicetak resmi oleh</p>
+                            <p class="fw-bold mb-0" style="font-size: 7pt;">ISBDS CS Cabang Kebumen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 <!-- Hover Overlay -->
 <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 </div>
