@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-Surat | ISBDS Cipta Sejati Kebumen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#727784",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#e0e0ff",
+              "background": "#f8f9fa",
+              "on-surface": "#191c1d",
+              "on-secondary-fixed": "#000767",
+              "secondary-container": "#959efd",
+              "surface-container": "#edeeef",
+              "on-tertiary-fixed-variant": "#004b70",
+              "surface-tint": "#115cb9",
+              "surface-container-low": "#f3f4f5",
+              "primary-fixed": "#d7e2ff",
+              "on-primary": "#ffffff",
+              "surface-container-highest": "#e1e3e4",
+              "surface-bright": "#f8f9fa",
+              "secondary-fixed-dim": "#bdc2ff",
+              "on-primary-fixed": "#001a40",
+              "primary-container": "#0056b3",
+              "outline-variant": "#c2c6d4",
+              "tertiary": "#004568",
+              "on-primary-fixed-variant": "#004491",
+              "tertiary-fixed-dim": "#8dcdff",
+              "surface-dim": "#d9dadb",
+              "on-secondary-fixed-variant": "#343d96",
+              "surface-container-high": "#e7e8e9",
+              "on-secondary-container": "#27308a",
+              "on-surface-variant": "#424752",
+              "inverse-primary": "#acc7ff",
+              "error": "#ba1a1a",
+              "tertiary-fixed": "#cae6ff",
+              "surface-variant": "#e1e3e4",
+              "tertiary-container": "#005e8b",
+              "primary": "#003f87",
+              "error-container": "#ffdad6",
+              "on-tertiary-container": "#a2d5ff",
+              "on-primary-container": "#bbd0ff",
+              "secondary": "#4c56af",
+              "primary-fixed-dim": "#acc7ff",
+              "inverse-surface": "#2e3132",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed": "#001e30",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface": "#f8f9fa",
+              "on-tertiary": "#ffffff",
+              "on-background": "#191c1d"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sidebar-active {
+            background-color: #003f87;
+            color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 63, 135, 0.2);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto z-50 bg-slate-50 flex flex-col gap-4 py-6 border-r border-slate-200 shadow-2xl shadow-blue-900/5 no-scrollbar">
+<div class="px-6 mb-4">
+<h1 class="text-lg font-black text-blue-900 uppercase tracking-widest font-headline">ISBDS Kebumen</h1>
+<p class="text-[10px] font-semibold text-slate-500 tracking-wider">Management System</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-2">
+<!-- Navigation Items Mapping -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+                Data Induk
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Profil Anggota
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+                E-Sertifikat
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="contact_mail">contact_mail</span>
+                E-KTA
+            </a>
+<!-- Active State for E-Surat -->
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-700 text-white rounded-xl shadow-lg shadow-blue-700/20 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="mail" style="font-variation-settings: 'FILL' 1;">mail</span>
+                E-Surat
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-all duration-200 font-inter font-semibold text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                E-Raport
+            </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl transition-all font-inter font-semibold text-sm">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 min-h-screen flex flex-col relative">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 w-full bg-slate-50/80 backdrop-blur-md flex justify-between items-center px-8 py-3 border-b border-slate-200/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-900" data-icon="menu_open">menu_open</span>
+<span class="text-xl font-extrabold tracking-tighter text-blue-900 font-headline">ISBDS Cipta Sejati Kebumen</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative flex items-center bg-surface-container-low px-4 py-1.5 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-slate-400 text-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400 font-body" placeholder="Cari surat..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-slate-500 hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-blue-50 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-px bg-slate-200"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin Kebumen</p>
+<p class="text-[10px] text-slate-500">Super Administrator</p>
+</div>
+<img alt="Admin Profile" class="w-9 h-9 rounded-full object-cover border-2 border-primary-fixed" data-alt="Close-up portrait of a professional man in a business setting with soft studio lighting and clean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrH_10a-Jf7jElvK1D0WonaPHbbk9vMrJQJ_rC5d8XhEKFfpBVL7O3fegb6nwmBO8N9mzGsQr7xyC2GrIfHXjoatF36deM4YP54hlN4elxrxl4A5nbzUMF3Vab_uWP87pqGPYlgMqs6gUmtN7HCM9C4KSCE4bxCjpmMRxxiR9D582HIiMRHDj_SdUzznkx391AJP6oC8rii8gz0fqUTf0cDOqIYnL84NMnfG-hOcz_dHYZFCMiamePhYbv7EViI9A2udRWwu15U9-T"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<div class="p-8 max-w-[1400px] mx-auto w-full">
+<!-- Header Section with Editorial Asymmetry -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="max-w-2xl">
+<nav class="flex items-center gap-2 text-slate-400 text-xs mb-3 font-semibold tracking-wider">
+<span>MANAGEMENT</span>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-blue-700">E-SURAT</span>
+</nav>
+<h2 class="text-4xl font-extrabold text-blue-900 font-headline tracking-tight mb-2">Manajemen E-Surat</h2>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                        Kelola alur komunikasi organisasi melalui sistem arsip digital yang aman dan terintegrasi untuk surat masuk maupun surat keluar.
+                    </p>
+</div>
+<button class="flex items-center gap-2 bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-blue-700/20 hover:scale-105 transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                    Tambah Surat Baru
+                </button>
+</div>
+<!-- Dashboard Stats (Glassmorphism Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-blue-50 shadow-sm flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-700">
+<span class="material-symbols-outlined" data-icon="inbox">inbox</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Surat Masuk</p>
+<p class="text-2xl font-black text-blue-900">124</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-blue-50 shadow-sm flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="outbox">outbox</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Surat Keluar</p>
+<p class="text-2xl font-black text-blue-900">86</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl border border-blue-50 shadow-sm flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined" data-icon="folder_zip">folder_zip</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-500 uppercase tracking-tighter">Total Arsip</p>
+<p class="text-2xl font-black text-blue-900">1,240</p>
+</div>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-surface-container-lowest rounded-3xl shadow-[0px_24px_48px_rgba(0,31,64,0.06)] overflow-hidden">
+<!-- Filter & Search Bar -->
+<div class="p-6 border-b border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3">
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border-none rounded-xl px-4 py-2.5 pr-10 text-sm font-semibold text-on-surface-variant focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Semua Jenis Surat</option>
+<option>Surat Masuk</option>
+<option>Surat Keluar</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-surface-container-low border-none rounded-xl px-4 py-2.5 pr-10 text-sm font-semibold text-on-surface-variant focus:ring-2 focus:ring-primary/20 cursor-pointer">
+<option>Tahun 2026</option>
+<option>Tahun 2025</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none" data-icon="calendar_today">calendar_today</span>
+</div>
+<button class="flex items-center gap-2 px-4 py-2.5 text-slate-600 hover:bg-slate-100 rounded-xl transition-all text-sm font-semibold">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filter Lanjutan
+                        </button>
+</div>
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-4 top-3 text-slate-400 text-lg" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-xl text-sm focus:ring-2 focus:ring-primary/20 font-body" placeholder="Cari nomor atau perihal surat..." type="text"/>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-separate border-spacing-0">
+<thead>
+<tr class="bg-slate-50/50">
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100">Jenis Surat</th>
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100">Nomor Surat</th>
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100">Perihal</th>
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100">Pengirim</th>
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100">Penerima</th>
+<th class="px-6 py-4 text-[11px] font-black text-slate-500 uppercase tracking-widest border-b border-slate-100 text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold border border-green-100">
+<span class="material-symbols-outlined text-[12px]" data-icon="arrow_downward">arrow_downward</span>
+                                        Surat Masuk
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-bold text-blue-900 font-mono tracking-tight">SM/2026/IX/02</td>
+<td class="px-6 py-5">
+<p class="text-sm font-semibold text-on-surface truncate max-w-[200px]">Undangan Rapat Cabang</p>
+<p class="text-[10px] text-slate-400">Terima: 12 Sep 2026</p>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Sekretariat Pusat</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Ketua Cabang</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors" title="Detail"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors" title="Edit"><span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span></button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors" title="Hapus"><span class="material-symbols-outlined text-xl" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-100">
+<span class="material-symbols-outlined text-[12px]" data-icon="arrow_upward">arrow_upward</span>
+                                        Surat Keluar
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-bold text-blue-900 font-mono tracking-tight">SK/2026/X/15</td>
+<td class="px-6 py-5">
+<p class="text-sm font-semibold text-on-surface truncate max-w-[200px]">Permohonan Izin Tempat</p>
+<p class="text-[10px] text-slate-400">Kirim: 05 Okt 2026</p>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Sekretaris Cabang</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Pengelola GOR</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span></button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold border border-green-100">
+<span class="material-symbols-outlined text-[12px]" data-icon="arrow_downward">arrow_downward</span>
+                                        Surat Masuk
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-bold text-blue-900 font-mono tracking-tight">SM/2026/XI/08</td>
+<td class="px-6 py-5">
+<p class="text-sm font-semibold text-on-surface truncate max-w-[200px]">Laporan Bulanan Ranting</p>
+<p class="text-[10px] text-slate-400">Terima: 08 Nov 2026</p>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Ranting Pejagoan</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Admin Cabang</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span></button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-100">
+<span class="material-symbols-outlined text-[12px]" data-icon="arrow_upward">arrow_upward</span>
+                                        Surat Keluar
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-bold text-blue-900 font-mono tracking-tight">SK/2026/XI/12</td>
+<td class="px-6 py-5">
+<p class="text-sm font-semibold text-on-surface truncate max-w-[200px]">Pemberitahuan Ujian Kenaikan Sabuk</p>
+<p class="text-[10px] text-slate-400">Kirim: 12 Nov 2026</p>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Ketua Cabang</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Seluruh Ranting</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span></button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-blue-50/30 transition-colors group">
+<td class="px-6 py-5 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 text-[10px] font-bold border border-green-100">
+<span class="material-symbols-outlined text-[12px]" data-icon="arrow_downward">arrow_downward</span>
+                                        Surat Masuk
+                                    </span>
+</td>
+<td class="px-6 py-5 text-sm font-bold text-blue-900 font-mono tracking-tight">SM/2026/XI/20</td>
+<td class="px-6 py-5">
+<p class="text-sm font-semibold text-on-surface truncate max-w-[200px]">Konfirmasi Delegasi Atlet</p>
+<p class="text-[10px] text-slate-400">Terima: 20 Nov 2026</p>
+</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">KONI Kebumen</td>
+<td class="px-6 py-5 text-sm text-on-surface-variant font-medium">Admin Cabang</td>
+<td class="px-6 py-5">
+<div class="flex items-center justify-center gap-2">
+<button class="p-2 text-blue-600 hover:bg-blue-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="edit_note">edit_note</span></button>
+<button class="p-2 text-red-500 hover:bg-red-50 rounded-lg transition-colors"><span class="material-symbols-outlined text-xl" data-icon="delete">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="p-6 bg-slate-50/50 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-xs font-semibold text-slate-500">Menampilkan <span class="text-blue-900">5</span> dari <span class="text-blue-900">124</span> data surat</p>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-blue-900 disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-blue-700 text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded-lg hover:bg-blue-50 text-slate-600 text-xs font-bold transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg hover:bg-blue-50 text-slate-600 text-xs font-bold transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-8 h-8 rounded-lg hover:bg-blue-50 text-slate-600 text-xs font-bold transition-colors">12</button>
+</div>
+<button class="p-2 text-slate-600 hover:text-blue-900">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Informational Banner -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative overflow-hidden rounded-2xl h-48 group">
+<img alt="Digital Transformation" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern workspace with digital devices and blue glowing accents representing technology and efficient communication" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5pfyG2lhReC6t4Xngsuwl4ICfseDpopEAUzchLMgwxOluWMR-UtBXvBmiztrcPTiAeakc01uGFOg9QxZGecDHStMW7ga-3cd50s5-E9rQrAQj30claMJTN198QvPohFy_8GpMfQ02BMNcPqplu8W2syJH1fzyXii3UntDYZmLcfFn0fa-FSXGvHruO3vuRppTH3iPa6w16PhTIazViwZ9thkH0bjK_vUkOL5vTFLPBxvSVPTJoA84JxpKHqgnSaqJuclo0zRuQrx_"/>
+<div class="absolute inset-0 bg-blue-900/60 flex flex-col justify-end p-6">
+<h4 class="text-lg font-bold text-white mb-1">Keamanan Arsip</h4>
+<p class="text-blue-100 text-xs leading-relaxed max-w-sm">Seluruh surat tersimpan dalam enkripsi cloud untuk menjamin kerahasiaan data organisasi ISBDS Cipta Sejati.</p>
+</div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-lg" data-icon="info">info</span>
+</div>
+<h4 class="text-xl font-extrabold text-blue-900 font-headline">Petunjuk Operasional</h4>
+</div>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
+                            Pastikan format file surat (PDF) tidak melebihi 2MB.
+                        </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
+                            Nomor surat otomatis dihasilkan sistem untuk surat keluar baru.
+                        </li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2"></span>
+                            Penerima akan mendapatkan notifikasi email saat surat baru diarsipkan.
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- FAB for Quick Access (Contextual Support) -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-tertiary text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="contact_support" style="font-variation-settings: 'FILL' 1;">contact_support</span>
+</button>
+</main>
+  <!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 glass-overlay">
+<!-- Modal Card -->
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-[2rem] shadow-[0px_48px_96px_rgba(0,31,64,0.15)] overflow-hidden border border-blue-50/50">
+<!-- Modal Header -->
+<div class="px-10 py-8 bg-gradient-to-r from-slate-50 to-blue-50/30 flex justify-between items-center border-b border-slate-100">
+<div>
+<h2 class="font-headline text-2xl font-black text-blue-900 tracking-tight">Input Data Surat</h2>
+<p class="text-slate-500 text-sm font-medium mt-1">Lengkapi informasi dokumen di bawah ini.</p>
+</div>
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-slate-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-10 max-h-[716px] overflow-y-auto">
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Jenis Surat</label>
+<select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-bold text-slate-900 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all appearance-none cursor-pointer">
+<option>Surat Masuk</option>
+<option>Surat Keluar</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Nomor Surat</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all" placeholder="Contoh: SM/2023/IX/02" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Perihal</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all" placeholder="Masukkan judul atau tujuan surat" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Pengirim</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all" placeholder="Nama instansi atau perorangan" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Penerima</label>
+<input class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all" placeholder="Nama instansi atau perorangan" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1">Isi Singkat</label>
+<textarea class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 text-sm font-medium text-slate-900 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/40 focus:bg-white transition-all resize-none" placeholder="Ringkasan isi surat..." rows="3"></textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs font-bold text-slate-500 uppercase tracking-widest pl-1 flex items-center justify-between">
+                            Upload Berkas
+                            <span class="normal-case text-[10px] text-slate-400 italic">Opsional</span>
+</label>
+<div class="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center hover:border-primary/40 hover:bg-blue-50/30 transition-all cursor-pointer group">
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors text-3xl mb-2">cloud_upload</span>
+<p class="text-xs font-bold text-slate-500">Klik untuk unggah atau seret file PDF/Gambar</p>
+<p class="text-[10px] text-slate-400 mt-1">Maksimal ukuran file: 5MB</p>
+</div>
+</div>
+</form>
+</div>
+<!-- Modal Footer -->
+<div class="px-10 py-8 bg-slate-50 flex justify-end gap-4 border-t border-slate-100">
+<button class="px-8 py-3 rounded-xl text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors">Batal</button>
+<button class="px-10 py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-xl text-sm font-bold shadow-lg shadow-blue-900/20 hover:scale-[1.02] active:scale-95 transition-all">
+                    Simpan Data Surat
+                </button>
+</div>
+</div>
+</div>
+</body></html>
