@@ -61,6 +61,25 @@
     });
                         }
 
+function renderTableRiwayat(riwayat) {
+    const tbody = document.getElementById('tabel-riwayat-body');
+    if (!tbody) return;
+    if (!riwayat || riwayat.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" class="border border-black p-2 text-center italic">- Tidak ada riwayat sabuk -</td></tr>`;
+        return;
+    }
+    riwayat.sort((a, b) => (a.th || 0) - (b.th || 0));
+    tbody.innerHTML = riwayat.map((item, i) => `
+        <tr class="text-center">
+            <td class="border border-black p-1">${i + 1}</td>
+            <td class="border border-black p-1 text-left px-2">${item.t || '-'}</td>
+            <td class="border border-black p-1">${item.s || '-'}</td>
+            <td class="border border-black p-1">${item.th || '-'}</td>
+        </tr>
+    `).join('');
+}
+        
+
         document.getElementById('isi-data-profil').innerHTML = `
             <div class="row-data"><div class="label-data">1. Nama Anggota</div><div class="value-data">: ${anggota.nama_lengkap || '-'}</div></div>
             <div class="row-data"><div class="label-data">2. Nomor Induk Anggota (NIA)</div><div class="value-data" id="view-nia">: ${anggota.nia || '-'}</div></div>
