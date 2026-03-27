@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>E-KTA Management - SIM ISBDS Cipta Sejati</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#004b70",
+                        "on-secondary-fixed": "#000767",
+                        "tertiary-fixed": "#cae6ff",
+                        "on-primary-fixed": "#001a40",
+                        "on-secondary-container": "#27308a",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#004491",
+                        "surface-container-low": "#f3f4f5",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d7e2ff",
+                        "primary-container": "#0056b3",
+                        "primary-fixed-dim": "#acc7ff",
+                        "outline": "#727784",
+                        "outline-variant": "#c2c6d4",
+                        "on-tertiary-fixed": "#001e30",
+                        "tertiary-container": "#005e8b",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#343d96",
+                        "on-primary-container": "#bbd0ff",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed-dim": "#bdc2ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "secondary": "#4c56af",
+                        "on-surface-variant": "#424752",
+                        "inverse-primary": "#acc7ff",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#8dcdff",
+                        "surface-tint": "#115cb9",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-container": "#959efd",
+                        "secondary-fixed": "#e0e0ff",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#a2d5ff",
+                        "tertiary": "#004568",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "primary": "#003f87",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3132"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .kta-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 overflow-y-auto bg-slate-50 dark:bg-slate-900 flex flex-col border-r border-slate-200/20 z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h1 class="text-xl font-extrabold text-blue-900 dark:text-blue-100 tracking-tighter font-headline">ISBDS Cipta Sejati</h1>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Cabang Kebumen</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">database</span>
+<span class="font-medium">Data Induk</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">person</span>
+<span class="font-medium">Profil Anggota</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">verified</span>
+<span class="font-medium">E-sertifikat</span>
+</a>
+<!-- Active Navigation: E-KTA -->
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 rounded-xl font-bold transition-all scale-95" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">contact_mail</span>
+<span class="font-headline tracking-tight">E-KTA</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">description</span>
+<span class="font-medium">E-Surat</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">assessment</span>
+<span class="font-medium">E-raport</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-200/50">
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-slate-200 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-red-600 transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform text-red-500">logout</span>
+<span class="font-medium">Logout</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 left-64 h-16 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md flex justify-between items-center px-8 w-full shadow-sm">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 text-sm font-medium">Pages /</span>
+<span class="text-blue-700 dark:text-blue-400 font-semibold text-sm">E-KTA Management</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group focus-within:ring-2 focus-within:ring-blue-500/40 rounded-xl">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border-none rounded-xl text-sm focus:ring-0 w-64 transition-all" placeholder="Search data..." type="text"/>
+</div>
+<div class="flex items-center gap-4 border-l border-slate-200 pl-6">
+<button class="text-slate-500 hover:text-blue-600 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="flex items-center gap-3 ml-2">
+<div class="text-right hidden sm:block">
+<p class="text-xs font-bold text-on-surface">Admin User</p>
+<p class="text-[10px] text-slate-500">Super Admin</p>
+</div>
+<img alt="Admin Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-primary/10" data-alt="close-up portrait of professional male admin user with a confident smile in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFi16Wl0h7U8qsTtNIwfcwnghEsLH4uD2uK-lR8MrdpUiV6Cp8ptRm7jMbaL2-dTMD8Dqotq5h09L-NqTWEOzJlyw53t6iCrOCjfdiZKNZzXTw9QvtYmVdQu1MXzhcwo0hP4yWEeHW89oa6cSyJAqJ9FZcnFtPK-QvxWvo6EEB1Mah0ObGzdwMr5rKC-53khVkhEz9LbDM2RONjnwFMUmntZNcZ0QmB_DLEdk0K9y6LaeLnfyWesqc6GHBW-rkAPB4w1iHvVVpBXcH"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen bg-surface">
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Breadcrumb & Header -->
+<div class="mb-8">
+<nav aria-label="Breadcrumb" class="flex mb-2">
+<ol class="inline-flex items-center space-x-1 md:space-x-3 text-xs font-medium text-slate-500">
+<li class="inline-flex items-center">SIM</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-primary font-semibold">E-KTA</span>
+</div>
+</li>
+</ol>
+</nav>
+<h2 class="text-3xl font-extrabold font-headline tracking-tight text-on-surface">Penerbitan E-KTA</h2>
+<p class="text-on-surface-variant body-md mt-1">Kelola dan cetak Kartu Tanda Anggota digital secara instan.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Left Column: Search & Data -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Search Card -->
+<div class="bg-surface-container-lowest rounded-full p-8 shadow-[0px_24px_48px_rgba(0,31,64,0.06)] border border-white/40">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">search</span>
+                            Cari Anggota
+                        </h3>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2 ml-1">Nomor Induk Anggota (NIA)</label>
+<div class="relative group">
+<input class="w-full bg-surface-container-highest border-none rounded-xl py-3 px-4 text-sm font-semibold focus:ring-2 focus:ring-surface-tint/40 transition-all" placeholder="Contoh: 2026.01.001" type="text" value="2026.01.001"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-white p-1.5 rounded-lg shadow-md hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Member Info Card -->
+<div class="bg-surface-container-low rounded-full p-8 border border-slate-200/30 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<h3 class="font-headline font-bold text-lg mb-6">Informasi Anggota</h3>
+<div class="space-y-5 relative z-10">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Nama Lengkap</span>
+<span class="font-headline font-bold text-on-surface">Muhammad Raffi Arsyad</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">NIA</span>
+<span class="font-mono text-sm font-semibold text-primary">2026.01.001</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jenis Kelamin</span>
+<span class="text-sm font-medium">Laki-laki</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Tempat, Tanggal Lahir</span>
+<span class="text-sm font-medium">Kebumen, 12 Mei 2005</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Alamat</span>
+<span class="text-sm font-medium leading-relaxed">Jl. Pahlawan No. 45, Kebumen, Jawa Tengah</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-slate-200/50 flex items-center gap-3">
+<span class="flex h-3 w-3 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+</span>
+<span class="text-xs font-bold text-green-600 uppercase tracking-tighter">Status: Aktif</span>
+</div>
+</div>
+</div>
+<!-- Right Column: KTA Preview -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-surface-container-lowest rounded-full p-8 shadow-[0px_24px_48px_rgba(0,31,64,0.06)] border border-white/40 h-full">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline font-bold text-xl tracking-tight">Pratinjau E-KTA (ID Card Standard)</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold text-slate-500 uppercase">CR80 Standard</span>
+<span class="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-[10px] font-bold uppercase">Digital Copy</span>
+</div>
+</div>
+<div class="flex flex-col xl:flex-row gap-10 justify-center items-center py-4">
+<!-- FRONT CARD -->
+<div class="relative w-[400px] h-[250px] bg-primary rounded-2xl shadow-2xl overflow-hidden flex flex-col kta-pattern border border-white/20">
+<!-- Top Accent -->
+<div class="h-14 bg-white flex items-center px-6 justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<p class="text-[8px] font-bold text-primary tracking-widest uppercase leading-none">ISBDS CIPTA SEJATI</p>
+<p class="text-[7px] font-medium text-slate-500 leading-none">Cabang Kebumen</p>
+</div>
+</div>
+<div class="text-[8px] font-bold text-slate-400 tracking-tighter">MEMBER CARD</div>
+</div>
+<div class="flex-grow flex p-6 gap-6 items-center">
+<!-- Photo -->
+<div class="w-28 h-32 bg-slate-100 rounded-lg border-2 border-white/30 overflow-hidden shadow-inner flex-shrink-0">
+<img alt="Member Photo" class="w-full h-full object-cover" data-alt="professional portrait of a young man for identification card, neutral background, sharp focus, clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Yd_Un7quyynoljLOIlvBpKySBgUzgHdZ58bjVRnM-7WFGYWUyQkvpDKgzksQV2qU6N9vQ0bakGSEHtRuoEiDyZ2mT75T8ZWPHvukAZXBPWIuGxKpAoPgRtkFBtodzA_RHNXhRCQsdRnmAcf2IW7gD2vPVFzsnBBDo6vm4h_QftHbs-ktu7bEaIa-i0Kz_pnbT20BhdJSSu6IGJ7p4RfYqf42rCGHKocZYgXbeO2boJdzrYzI6aANfuvr2BxQllm64xBEGoxQ2m8x"/>
+</div>
+<!-- Details -->
+<div class="flex flex-col text-white">
+<div class="mb-2">
+<p class="text-[8px] font-bold opacity-70 uppercase tracking-widest">Nomor Induk</p>
+<p class="font-headline font-extrabold text-lg leading-none">2026.01.001</p>
+</div>
+<div class="mb-2">
+<p class="text-[8px] font-bold opacity-70 uppercase tracking-widest">Nama Lengkap</p>
+<p class="font-headline font-bold text-sm">MUHAMMAD RAFFI ARSYAD</p>
+</div>
+<div class="grid grid-cols-1 gap-1">
+<div>
+<p class="text-[7px] font-bold opacity-70 uppercase tracking-widest leading-none">Tempat, Tgl Lahir</p>
+<p class="text-[9px] font-medium leading-tight">Kebumen, 12 Mei 2005</p>
+</div>
+<div>
+<p class="text-[7px] font-bold opacity-70 uppercase tracking-widest leading-none">Alamat</p>
+<p class="text-[8px] font-medium leading-tight line-clamp-2">Jl. Pahlawan No. 45, Kebumen, Jawa Tengah</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 opacity-10 -mr-8 -mb-8 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">shield</span>
+</div>
+</div>
+<!-- BACK CARD -->
+<div class="relative w-[400px] h-[250px] bg-slate-50 rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-slate-200">
+<div class="p-6 flex gap-4 h-full">
+<!-- Rules -->
+<div class="flex-grow">
+<h4 class="text-[10px] font-extrabold text-primary uppercase tracking-wider mb-3 pb-1 border-b border-slate-200">Tata Tertib Anggota</h4>
+<ul class="space-y-1.5">
+<li class="flex items-start gap-1.5">
+<span class="text-[8px] font-bold text-primary">01.</span>
+<p class="text-[7.5px] text-slate-600 font-medium leading-tight">Menjaga nama baik organisasi ISBDS Cipta Sejati di manapun berada.</p>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-[8px] font-bold text-primary">02.</span>
+<p class="text-[7.5px] text-slate-600 font-medium leading-tight">Mentaati segala peraturan dan AD/ART yang telah ditetapkan.</p>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-[8px] font-bold text-primary">03.</span>
+<p class="text-[7.5px] text-slate-600 font-medium leading-tight">Kartu ini wajib dibawa saat kegiatan resmi organisasi.</p>
+</li>
+<li class="flex items-start gap-1.5">
+<span class="text-[8px] font-bold text-primary">04.</span>
+<p class="text-[7.5px] text-slate-600 font-medium leading-tight">Penyalahgunaan kartu ini akan dikenakan sanksi sesuai aturan.</p>
+</li>
+</ul>
+<div class="mt-6">
+<p class="text-[7px] font-bold text-slate-400 uppercase">Ditetapkan di</p>
+<p class="text-[8px] font-bold text-slate-800">Kebumen, Januari 2024</p>
+<div class="mt-2 w-20 h-8 border-b border-slate-300"></div>
+<p class="text-[7px] font-bold text-slate-500 mt-1 italic leading-none">Ketua Cabang</p>
+</div>
+</div>
+<!-- QR Code Side -->
+<div class="w-32 flex flex-col items-center justify-center bg-white rounded-xl border border-slate-100 p-2 shadow-sm">
+<div class="bg-primary/5 p-2 rounded-lg mb-2">
+<img alt="QR Code" class="w-24 h-24 mix-blend-multiply opacity-80" data-alt="high contrast digital QR code for member verification with a minimalist white border" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOvpOlLlI4AGXdAN4Xr7veJP4Uv-pIp8O7sMB7VgxDcOWxiBJI0wPWkFe7pTHY-vxwI1t18fSEaQKNrQuQ1fdtm2HLCj-61N_lRZ_bef3Y-Y9OWuHT_BGgECldSwnGTU0sP-9VSGpjbCvGiLxSPCeYyoXdBJBPth3m9IilP0Qia1Q0sktQbBdVFFiEGo8cmTbsJ9oVcOTg3ZE4I1CiVaRUytA_lYcHCcFlKeGnF0YFCCNUe4uNFv8lXEE68vR2bC2fTCq1zCG15fSh"/>
+</div>
+<p class="text-[7px] font-bold text-primary tracking-widest uppercase">Verified</p>
+<p class="text-[6px] text-slate-400 font-medium text-center leading-tight">Scan for valid data verification</p>
+</div>
+</div>
+<div class="bg-primary h-2 w-full"></div>
+</div>
+</div>
+<!-- Actions Area -->
+<div class="mt-12 pt-8 border-t border-slate-100 flex flex-wrap justify-center gap-4">
+<button class="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-headline font-bold text-sm shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">download</span>
+                                Download KTA Depan (JPG)
+                            </button>
+<button class="flex items-center gap-3 px-8 py-4 bg-surface-container-high text-primary rounded-full font-headline font-bold text-sm hover:bg-surface-container-highest transition-all">
+<span class="material-symbols-outlined">download</span>
+                                Download KTA Belakang (JPG)
+                            </button>
+<button class="flex items-center gap-3 px-8 py-4 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full font-headline font-bold text-sm hover:scale-105 transition-all">
+<span class="material-symbols-outlined">print</span>
+                                Cetak Kartu (PDF)
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="ml-0 p-8 border-t border-slate-200/30 bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row justify-between items-center gap-4 w-full">
+<p class="text-slate-500 text-xs font-medium tracking-wide">© 2024 Sistem Informasi Manajemen ISBDS Cipta Sejati Cabang Kebumen</p>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-blue-700 text-xs font-medium transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-700 text-xs font-medium transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-700 text-xs font-medium transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+</main>
+</body></html>
