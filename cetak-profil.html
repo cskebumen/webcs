@@ -1,0 +1,46 @@
+<!-- Kop -->
+        <div class="flex justify-between items-center border-b-4 border-double border-black pb-2 mb-4">
+            <img src="/ipsi.png" class="logo-kop" alt="Logo Kiri">
+            <div class="text-center flex-grow px-2">
+                <h2 class="font-bold uppercase leading-tight" style="font-size: 14pt; margin:0;">Institut Seni Bela Diri Silat</h2>
+                <h1 class="font-extrabold uppercase leading-tight" style="font-size: 20pt; margin:0;">CIPTA SEJATI</h1>
+                <h3 class="font-bold uppercase leading-tight text-blue-700" style="font-size: 12pt; margin:0;">CABANG KEBUMEN</h3>
+                <p class="italic" style="font-size: 8.5pt; margin:0;">Alamat: Ds. Tlepok Rt 03/ Rw 01, Kec. Karangsambung, Kab. Kebumen</p>
+            </div>
+            <img src="/isbds.png" class="logo-kop" alt="Logo Kanan">
+        </div>
+        <h4 class="text-center font-bold underline mb-6 uppercase" style="font-size: 12pt;">Keterangan Tentang Data Diri Anggota</h4>
+        <div id="isi-data-profil" class="space-y-1 text-sm mb-6"></div>
+        <p class="font-bold text-sm mb-2 mt-4">9. Riwayat Sabuk</p>
+        <table class="w-full border-collapse border border-black text-sm mb-10">
+            <thead class="bg-gray-100 uppercase text-center font-bold">
+                <tr>
+                    <th class="border border-black p-2 w-12 text-center">No</th>
+                    <th class="border border-black p-2">Tingkat Sabuk</th>
+                    <th class="border border-black p-2">No. Sertifikat</th>
+                    <th class="border border-black p-2 w-24 text-center">Tahun</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-riwayat-body"></tbody>
+        </table>
+        <div class="flex justify-between items-start mt-10 px-10">
+            <div class="border border-black w-32 h-40 flex items-center justify-center relative overflow-hidden bg-gray-50">
+                <img id="img-foto-profil" src="/img/placeholder-3x4.png" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center">
+                <p class="text-sm">Kebumen, <span id="view-tanggal-cetak">-</span></p>
+                <p class="text-sm mb-20">Ketua Cabang ISBDS CS Kebumen,</p>
+                <p class="font-bold underline text-sm">AHMAD TAUFIK</p>
+                <p class="text-xs">NIA. 03.06.02.00003</p>
+            </div>
+        </div>
+        <!-- Barcode dan keterangan -->
+        <div class="mt-8 border-t pt-4 flex items-center">
+            <div class="w-1/2">
+                <canvas id="barcode-canvas" class="w-full"></canvas>
+            </div>
+            <div class="w-1/2 text-xs text-center">
+                Dokumen ini resmi dicetak oleh<br>
+                <span class="font-bold">ISBDS CIPTA SEJATI Cabang Kebumen</span>
+            </div>
+        </div>
